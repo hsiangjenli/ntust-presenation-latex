@@ -12,6 +12,7 @@ pdf:
 	mkdir -p build
 	xelatex -interaction nonstopmode --output-directory=build main.tex
 	xelatex -interaction nonstopmode --output-directory=build main.tex
-	# bibtex build/main.aux
-	# xelatex --output-directory=build main.tex
-	# xelatex --output-directory=build main.tex
+	bibtex build/main.aux
+	rm -rf  out
+	xelatex -interaction nonstopmode --output-directory=build main.tex
+	xelatex -interaction nonstopmode --output-directory=build main.tex

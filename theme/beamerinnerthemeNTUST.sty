@@ -16,8 +16,8 @@
 \setbeamertemplate{frametitle}{\vspace*{-1em}\bfseries\insertframetitle\par\vskip-1em
 \logo { 
     \begin{tikzpicture}[overlay,remember picture]
-    \node[anchor=north east,xshift=-0.05cm,yshift=0.65cm] at (current page.26){
-        \includegraphics[width=0.5cm]{assets/ntust/ntust-logo-icon.png}
+    \node[anchor=north east,xshift=-0.05cm,yshift=0.65cm, opacity=0.3] at (current page.26){
+        \includegraphics[width=0.5cm]{theme/ntust/ntust-logo-icon.png}
     };
     \end{tikzpicture}
     }
@@ -29,10 +29,10 @@
 % Footline
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[ht=3em,sep=0.75em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
-    \scriptsize{\insertshortinstitute}
+    % \bf\normalsize{\insertshortinstitute}
     \hspace{1cm}
     \hfill
-    \scriptsize{\insertframenumber/\inserttotalframenumber}
+    \normalsize{\insertframenumber/\inserttotalframenumber}
   \end{beamercolorbox}%
 }
 
@@ -56,23 +56,22 @@
         \vskip 2.5em\par
         % ------------------------
         \begin{beamercolorbox}[sep=8pt,left]{author}
-        \usebeamerfont{author}\insertauthor
+        % \usebeamerfont{author}\insertauthor
         \end{beamercolorbox}
         \vskip-2em
         % ------------------------
         \vskip1.5em\par
-        \begin{beamercolorbox}[sep=8pt,left]{institute}
-        \usebeamerfont{institute}\insertinstitute
-        \hspace*{0.40\linewidth}
-        \usebeamerfont{date}\insertdate
-        \end{beamercolorbox}
+        % \begin{beamercolorbox}[sep=8pt,left,wd=\textwidth]{institute}
+        % \usebeamerfont{institute}\insertinstitute
+        % \hfill\usebeamerfont{date}\insertdate
+        % \end{beamercolorbox}
         % ------------------------
 
         % Logo on the end page
        \titlegraphic{
         \begin{tikzpicture}[overlay,remember picture]
         \node[anchor=north west, outer xsep=26pt, outer ysep=20pt] at (current page.north west){
-            \includegraphics[width=12em]{assets/ntust/ntust-logo-name.png}
+            \includegraphics[width=12em]{theme/ntust/ntust-logo-name.png}
         };
         \end{tikzpicture}
         }
@@ -100,22 +99,38 @@
         \vskip4em\par
         % ------------------------
         \begin{beamercolorbox}[sep=8pt,left]{author}
-        \usebeamerfont{author}\insertauthor
+            \small
+            \bf
+            % if command \studentname is defined, then use it, otherwise use \insertauthor
+            \ifdefined\studentname
+                Student : \studentname \ifdefined \studentemail ~ \scriptsize (\href{mailto:\studentemail}{\studentemail}) \fi
+            \fi
+            \ifdefined\advisorone
+                \small
+                \newline Advisor : \advisorone
+                \ifdefined\advisortwo
+                    , \advisortwo
+                    \ifdefined\advisorthree
+                        , \advisorthree
+                    \fi
+                \fi
+            \fi
+
+        % \usebeamerfont{author}\insertauthor
         \end{beamercolorbox}
         \vskip-2em
         % ------------------------
         \vskip1.5em\par
-        \begin{beamercolorbox}[sep=8pt,left]{institute}
+        \begin{beamercolorbox}[sep=8pt,left,wd=\textwidth]{institute}
         \usebeamerfont{institute}\insertinstitute
-        \hspace*{0.40\linewidth}
-        \usebeamerfont{date}\insertdate
+        \hfill\usebeamerfont{date}\insertdate
         \end{beamercolorbox}
     
         % Logo on the title page
        \titlegraphic{
         \begin{tikzpicture}[overlay,remember picture]
         \node[anchor=north west, outer xsep=26pt, outer ysep=20pt] at (current page.north west){
-            \includegraphics[width=12em]{assets/ntust/ntust-logo-name.png}
+            \includegraphics[width=12em]{theme/ntust/ntust-logo-name.png}
         };
         \end{tikzpicture}
         } 
@@ -130,7 +145,7 @@
 \logo { 
     \begin{tikzpicture}[overlay,remember picture]
     % \node[anchor=north east,xshift=-0.2cm,yshift=0.65cm] at (current page.24){
-    %     \includegraphics[width=0.5cm]{assets/ntust/ntust-logo-icon.png}
+    %     \includegraphics[width=0.5cm]{theme/ntust/ntust-logo-icon.png}
     % };
     \end{tikzpicture}
     }
@@ -142,7 +157,7 @@
     \gradientline\par
     \vspace{6em}
     \begin{beamercolorbox}[ht=1em,sep=8pt,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
-    \scriptsize{\insertshortinstitute}
+    % \bf\normalsize{\insertshortinstitute}
     \hspace{1cm}
     \hfill
   \end{beamercolorbox}%
@@ -154,7 +169,7 @@
 
 %Select the Epilogue font (requires luaLatex or XeLaTex compilers)
 \setsansfont{Epilogue}[
-    Path=./assets/epilogueFont/,
+    Path=./theme/epilogueFont/,
     Scale=0.9,
     Extension = .ttf,
     UprightFont=*-Regular,
@@ -178,7 +193,7 @@
 \newcommand \makesection[1]{
 {
 \usebackgroundtemplate{
-\includegraphics[width=\paperwidth]{assets/ntust/section.png}
+\includegraphics[width=\paperwidth]{theme/ntust/section.png}
 }
 \begin{frame}[plain, noframenumbering]
     \section{#1}
@@ -195,7 +210,7 @@
 \newcommand \makefinalpage{
    {
     \usebackgroundtemplate{
-    \includegraphics[width=\paperwidth]{assets/ntust/cover.png}
+    \includegraphics[width=\paperwidth]{theme/ntust/cover.png}
     }
     \begin{frame}[plain]
     \usebeamertemplate{endpage}
@@ -208,7 +223,7 @@
 \newcommand \maketitlepage{
     {
     \usebackgroundtemplate{
-    \includegraphics[width=\paperwidth]{assets/ntust/cover.png}
+    \includegraphics[width=\paperwidth]{theme/ntust/cover.png}
     }
 \begin{frame}[plain]
     % Print the title page as the first slide
