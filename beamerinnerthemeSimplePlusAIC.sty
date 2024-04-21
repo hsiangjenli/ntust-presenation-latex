@@ -13,11 +13,11 @@
 \setbeamertemplate{date}[default]
 
 % General frames
-\setbeamertemplate{frametitle}{\vspace*{0.1em}\bfseries\insertframetitle\par\vskip-1em
+\setbeamertemplate{frametitle}{\vspace*{-1em}\bfseries\insertframetitle\par\vskip-1em
 \logo { 
     \begin{tikzpicture}[overlay,remember picture]
-    \node[left=0.2cm] at (current page.26){
-        \includegraphics[width=1.5cm]{AICStyleData/logos/LOGO_square_IUSS.png}
+    \node[anchor=north east,xshift=-0.05cm,yshift=0.65cm] at (current page.26){
+        \includegraphics[width=0.5cm]{assets/ntust/ntust-logo-icon.png}
     };
     \end{tikzpicture}
     }
@@ -72,7 +72,7 @@
        \titlegraphic{
         \begin{tikzpicture}[overlay,remember picture]
         \node[anchor=north west, outer xsep=26pt, outer ysep=20pt] at (current page.north west){
-            \includegraphics[width=12em]{AICStyleData/logos/Logo-IUSS.png}
+            \includegraphics[width=12em]{assets/ntust/ntust-logo-name.png}
         };
         \end{tikzpicture}
         }
@@ -115,7 +115,7 @@
        \titlegraphic{
         \begin{tikzpicture}[overlay,remember picture]
         \node[anchor=north west, outer xsep=26pt, outer ysep=20pt] at (current page.north west){
-            \includegraphics[width=12em]{AICStyleData/logos/Logo-IUSS.png}
+            \includegraphics[width=12em]{assets/ntust/ntust-logo-name.png}
         };
         \end{tikzpicture}
         } 
@@ -129,9 +129,9 @@
 \setbeamertemplate{section divider}{
 \logo { 
     \begin{tikzpicture}[overlay,remember picture]
-    \node[left=0.2cm] at (current page.24){
-        \includegraphics[width=1.5cm]{AICStyleData/logos/LOGO_square_IUSS.png}
-    };
+    % \node[anchor=north east,xshift=-0.2cm,yshift=0.65cm] at (current page.24){
+    %     \includegraphics[width=0.5cm]{assets/ntust/ntust-logo-icon.png}
+    % };
     \end{tikzpicture}
     }
     \vspace{14em}
@@ -154,7 +154,7 @@
 
 %Select the Epilogue font (requires luaLatex or XeLaTex compilers)
 \setsansfont{Epilogue}[
-    Path=./AICStyleData/epilogueFont/,
+    Path=./assets/epilogueFont/,
     Scale=0.9,
     Extension = .ttf,
     UprightFont=*-Regular,
@@ -178,7 +178,7 @@
 \newcommand \makesection[1]{
 {
 \usebackgroundtemplate{
-\includegraphics[width=\paperwidth]{AICStyleData/logos/sfondo_white_IUSS.png}
+\includegraphics[width=\paperwidth]{assets/ntust/section.png}
 }
 \begin{frame}[plain, noframenumbering]
     \section{#1}
@@ -195,7 +195,7 @@
 \newcommand \makefinalpage{
    {
     \usebackgroundtemplate{
-    \includegraphics[width=\paperwidth]{AICStyleData/logos/sfondo_beamer_IUSS.png}
+    \includegraphics[width=\paperwidth]{assets/ntust/cover.png}
     }
     \begin{frame}[plain]
     \usebeamertemplate{endpage}
@@ -208,7 +208,7 @@
 \newcommand \maketitlepage{
     {
     \usebackgroundtemplate{
-    \includegraphics[width=\paperwidth]{AICStyleData/logos/sfondo_beamer_IUSS.png}
+    \includegraphics[width=\paperwidth]{assets/ntust/cover.png}
     }
 \begin{frame}[plain]
     % Print the title page as the first slide

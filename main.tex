@@ -26,6 +26,7 @@
 \usepackage{color,soul}
 \usepackage{xcolor}
 \usepackage{nameref}
+
 % Redefinition of the \section command so that each one is labeled \label{sec:n} where n is its index 
 \let\oldsection\section
 \renewcommand{\section}[2][\relax]{%
@@ -38,11 +39,11 @@
 }
 
 % Definition of custom colors based on the initial figure of the bar by the OP
-\definecolor{myblue}{HTML}{57AED1}
+\definecolor{myblue}{HTML}{005BAC}
 \definecolor{mygreen}{HTML}{8BC53F}
 \definecolor{mygray}{HTML}{DDDDDD}
-\definecolor{BlueIuss}{HTML}{033354}
-\definecolor{LightBlueIuss}{HTML}{1b4a74}
+\definecolor{BlueIuss}{HTML}{013B64}
+\definecolor{LightBlueIuss}{HTML}{005BAC}
 
 % Definition of custom tikz styles in order to ease readability
 \tikzset{
@@ -143,12 +144,21 @@ University School for Advanced Studies IUSS Pavia
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother  
+
 \begin{document}
 \maketitlepage
 %\section{Overview}
 \begin{frame}[t]{Overview}
-    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-    \tableofcontents
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation    
+    \tableofcontents 
+
 \end{frame}
 
 %-----------------------------------------------
@@ -257,7 +267,7 @@ University School for Advanced Studies IUSS Pavia
 % Figure without wrapped text
 \begin{frame}{Figure}
     \begin{figure}
-    \includegraphics[height=0.5\paperheight]{AICStyleData/logos/Logo-IUSS.png}
+    \includegraphics[height=0.5\paperheight]{assets/ntust/ntust-logo-icon.png}
     \caption{Figure caption}
     \end{figure}
 \end{frame}
@@ -267,7 +277,7 @@ University School for Advanced Studies IUSS Pavia
 \begin{frame}{Wrapped Figure}
     \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{AICStyleData/logos/LOGO_square_IUSS.png}
+    \includegraphics[width=0.4\textwidth]{assets/ntust/ntust-logo-icon.png}
     \caption{Figure caption}
 \end{wrapfigure}
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
