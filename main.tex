@@ -30,18 +30,31 @@
     \usepackage{color,soul}
     \usepackage{xcolor}
     \usepackage{nameref}
+    
+    \usepackage[ruled,commentsnumbered,longend, noline]{algorithm2e}
+    \renewcommand{\SetKwComment}[3]{\rmfamily}
+
     \input{theme/progressbar.tex}
 
 \begin{document}
 
     % -- title page --
     \maketitlepage
-    \begin{frame}[t]{Overview}
-        \tableofcontents 
+    \begin{frame}[t]{Table of Contents}
+        \vfill
+        \tableofcontents
+        \vfill
     \end{frame}
 
     % -- chapters 1 --
-    \makesection{Basic blocks}
+    \makesection{Introduction}
+    \makesection{Related Work}
+    \makesection{Methodology}
+        \input{sections/ch3_method.tex}
+
+    \makesection{Experiments and Results}
+    \makesection{Conclusions}
+
     \begin{frame}{Bullet Points}
         \begin{itemize}
             \item Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -170,9 +183,12 @@
     % Refenrenced
     \begin{frame}[allowframebreaks]{References}
         \footnotesize
-        % Beamer does not support BibTeX so references must be inserted manually as below
         \renewcommand{\bibsection}{}
-        \bibliography{mybib}
+        \textit{
+            \bibliography{mybib}
+        }
+        % Beamer does not support BibTeX so references must be inserted manually as below
+
     \end{frame}
 
     %----------------------------------------------------------------------------------------
