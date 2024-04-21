@@ -1,0 +1,23 @@
+\NewDocumentCommand{\advisor}{moo}{
+    \IfValueT{#1}{\def\advisorone{#1}}
+    \IfValueT{#2}{\def\advisortwo{#2}}
+    \IfValueT{#3}{\def\advisorthree{#3}}
+}
+
+    % -- Redefinition of the \section command so that each one is labeled \label{sec:n} where n is its index 
+    \let\oldsection\section
+    \renewcommand{\section}[2][\relax]{%
+        \ifx#1\relax
+        \oldsection{#2}%
+        \else
+        \oldsection[#1]{#2}%
+        \fi%
+        \label{sec:\thesection}%
+    }
+    \makeatletter
+    \patchcmd{\beamer@sectionintoc}
+    {\vfill}
+    {\vskip\itemsep}
+    {}
+    {}
+    \makeatother  
