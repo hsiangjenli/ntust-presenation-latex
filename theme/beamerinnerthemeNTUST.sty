@@ -13,7 +13,7 @@
 \setbeamertemplate{date}[default]
 
 % General frames
-\setbeamertemplate{frametitle}{\vspace*{-1em}\bfseries\insertframetitle\par\vskip-1em
+\setbeamertemplate{frametitle}{\vspace*{-0.5em}\bfseries\insertframetitle\par\vskip-1em
 \logo { 
     \begin{tikzpicture}[overlay,remember picture]
     \node[anchor=north east,xshift=-0.05cm,yshift=0.65cm, opacity=0.3] at (current page.26){
@@ -88,8 +88,8 @@
     \begingroup
         \centering
         % ------------------------
-        \begin{beamercolorbox}[sep=8pt,ht=.3\textheight, wd=\textwidth, left]{title}
-            \usebeamerfont{title}\inserttitle \par
+        \begin{beamercolorbox}[sep=8pt,left]{title}
+        \usebeamerfont{title}\inserttitle\par%
         \ifx\insertsubtitle\@empty%
         \else%
             \vskip0.25em%
